@@ -2,4 +2,8 @@
 
 require('vendor/autoload.php');
 
-echo aeval('<?php return 123;');
+try{
+    panic('test');
+}catch(\Exception $e){
+    echo $e->getMessage();
+}

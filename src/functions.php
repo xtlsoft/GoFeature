@@ -72,3 +72,20 @@
         return \GoFeature\AEval::getInstance()->eval($code);
 
     }
+
+    /**
+     * Generate an Error
+     *
+     * @param string $msg
+     * @param string $type
+     * @param int $id
+     * @param mixed $more
+     * 
+     * @return void
+     * 
+     */
+    function panic(string $msg, string $type = "StandardError", int $id = null, $more = null){
+
+        return \GoFeature\GoError::getInstance()->error($msg, $type, $id, $more);
+
+    }
