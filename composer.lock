@@ -4,8 +4,112 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "16400a801e764003a278d2eb52f8d30b",
-    "packages": [],
+    "content-hash": "d470e9746f6989b1e532a36e0e1a46f6",
+    "packages": [
+        {
+            "name": "adlawson/vfs",
+            "version": "0.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adlawson/php-vfs.git",
+                "reference": "e955034419d6a8f92c9a8ea2e626eeed96b41095"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/adlawson/php-vfs/e955034419d6a8f92c9a8ea2e626eeed96b41095.zip",
+                "reference": "e955034419d6a8f92c9a8ea2e626eeed96b41095",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "adlawson/timezone": "^1.0",
+                "fabpot/php-cs-fixer": "^1.9",
+                "mockery/mockery": "^0.9",
+                "phpunit/phpunit": "^4.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vfs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Lawson",
+                    "homepage": "http://adlawson.com"
+                }
+            ],
+            "description": "Virtual file system",
+            "homepage": "https://github.com/adlawson/php-vfs",
+            "keywords": [
+                "dir",
+                "directory",
+                "file",
+                "fs",
+                "read",
+                "stream",
+                "system",
+                "virtual",
+                "wrapper",
+                "write"
+            ],
+            "time": "2016-02-20T12:46:01+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/php-fig/log/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d.zip",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2016-10-10T12:19:37+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",

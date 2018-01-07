@@ -18,13 +18,34 @@
 
     }
 
+    /**
+     * Defer a function
+     *
+     * @param callable $callback
+     * 
+     * @return \GoFeature\Defer
+     * 
+     */
     function defer(callable $callback){
 
         return \GoFeature\Defer::getInstance()->push($callback);
 
     }
 
-    function make($name, $arg1=null, $arg2=null, $arg3=null, $arg4=null, $arg5=null, $arg6=null){
+    /**
+     * Make a class
+     *
+     * @param string $name
+     * @param mixed $arg1
+     * @param mixed $arg2
+     * @param mixed $arg3
+     * @param mixed $arg4
+     * @param mixed $arg5
+     * @param mixed $arg6
+     * 
+     * @return void
+     */
+    function make(string $name, $arg1=null, $arg2=null, $arg3=null, $arg4=null, $arg5=null, $arg6=null){
 
         if($name === "channel"){
 
@@ -38,4 +59,16 @@
 
     }
 
-    
+    /**
+     * Advanced Eval Something
+     *
+     * @param string $code
+     * 
+     * @return mixed
+     * 
+     */
+    function aeval(string $code){
+
+        return \GoFeature\AEval::getInstance()->eval($code);
+
+    }

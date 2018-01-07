@@ -3,7 +3,8 @@
     "description": "Enabling Golang Features in PHP.",
     "type": "library",
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.4",
+        "adlawson/vfs": "^0.12.1"
     },
     "license": "MIT",
     "authors": [
