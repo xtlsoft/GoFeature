@@ -7,7 +7,7 @@ composer install xtlsoft/gofeature
 ```
 
 ## Demos
-Code:
+Defer:
 ```php
 <?php
 
@@ -34,3 +34,14 @@ Result:
 ```text
 3FromAnother2FromAnother121
 ```
+
+Go:
+```php
+$th = go(function($ctx){
+    while(1){
+        echo $this->recv();
+    }
+});
+$th->send("First test.\r\n");
+sleep(2);
+$th->send("Twice test.");
