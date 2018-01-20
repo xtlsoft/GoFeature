@@ -17,6 +17,54 @@
         use \GoFeature\Traits\GetInstance;
 
         /**
+         * Have GoError Registered to Error Handler?
+         *
+         * @var boolean
+         * 
+         */
+        protected $registered = false;
+
+        /**
+         * The error
+         *
+         * @var \Exception
+         * 
+         */
+        protected $error = null;
+
+        public function __construct(){
+
+            //Code here...
+
+        }
+
+        /**
+         * Register this
+         *
+         * @return self
+         * 
+         */
+        public function register(){
+
+            $goerr = $this;
+
+            \register_shutdown_function(function() use ($goerr){
+
+                $e = $goerr->recover();
+
+                if($e !== null){
+                    throw $e;
+                }
+
+            });
+
+            $this->registered = true;
+
+            return $this;
+
+        }
+
+        /**
          * Generate an Error
          *
          * @param string $msg
@@ -34,9 +82,47 @@
             $exception = new $class ($msg, $id);
             $exception->more = $more;
 
-            throw $exception;
+            $this->throw($exception);
+
+            if($this->error === null)
+                $this->error = $exception;
+            else{
+                \trigger_error("GoFeature Runtime Error: No recover() Found!", E_USER_WARNING);
+                die();
+            }
 
             return $exception;
+
+        }
+
+        /**
+         * Recover the runtime error
+         *
+         * @return \Exception
+         * 
+         */
+        public function recover(){
+            
+            $e = $this->error;
+            $this->error = null;
+
+            return $e;
+
+        }
+
+        /**
+         * Throw or not
+         *
+         * @param \Exception $e
+         * 
+         * @return void
+         * 
+         */
+        public function throw(\Exception $e){
+
+            if(!$this->registered){
+                throw $e;
+            }
 
         }
 
@@ -50,7 +136,7 @@
          */
         public function buildErrorClass(string $name){
 
-            if(!class_exists($name))
+            if(!class_exists("GoFeature\\Errors\\" . $name))
                 aeval("<?php
                 namespace GoFeature\\Errors;
                 class $name extends \\Exception {

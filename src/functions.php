@@ -33,6 +33,18 @@
     }
 
     /**
+     * Register the GoFeature Classes
+     *
+     * @return void
+     * 
+     */
+    function GoFeature_register(){
+
+        \GoFeature\GoError::getInstance()->register();
+
+    }
+
+    /**
      * Make a class
      *
      * @param string $name
@@ -87,5 +99,17 @@
     function panic(string $msg, string $type = "StandardError", int $id = null, $more = null){
 
         return \GoFeature\GoError::getInstance()->error($msg, $type, $id, $more);
+
+    }
+
+    /**
+     * Recover the runtime error
+     *
+     * @return \Exception
+     * 
+     */
+    function recover(){
+
+        return \GoFeature\GoError::getInstance()->recover();
 
     }

@@ -8,3 +8,7 @@ var_dump(
         ->exportInterface('Psr\Log\LoggerInterface')
 
 );
+
+GoFeature_register();
+
+panic("SomeError");
