@@ -12,9 +12,24 @@
 
     // Function defines
 
-    function go(){
+    /**
+     * Create a thread
+     *
+     * @param Callable $func
+     * @param mixed $param
+     * @param bool $run
+     * 
+     * @return \GoFeature\Thread
+     * 
+     */
+    function go(Callable $func, $param = null, bool $start = true){
 
+        $id = \GoFeature\Thread::create($func, $param);
 
+        if($start)
+            $GLOBALS['__GoFeatureThread__'][$id]->start();
+
+        return $GLOBALS['__GoFeatureThread__'][$id];
 
     }
 
@@ -42,6 +57,17 @@
 
         \GoFeature\GoError::getInstance()->register();
 
+        register_shutdown_function(function(){
+            if(is_array($GLOBALS['__GoFeatureThread__']))
+            foreach($GLOBALS['__GoFeatureThread__'] as $k=>$v){
+                try{
+                    $v->join();
+                }catch(\Exception $e){
+                    
+                }
+            }
+        });
+
     }
 
     /**
@@ -61,7 +87,7 @@
 
         if($name === "channel"){
 
-            return new Channel();
+            return new \GoFeature\Channel();
 
         }else{
 

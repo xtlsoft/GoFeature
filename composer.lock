@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d470e9746f6989b1e532a36e0e1a46f6",
+    "content-hash": "675c70192bf7b37910d08c2ee747a5dd",
     "packages": [
         {
             "name": "adlawson/vfs",
@@ -108,12 +108,50 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "xtlsoft/xcoroutine",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xtlsoft/XCoroutine.git",
+                "reference": "29e45b1aaa65bc758dc2bf7f2be80a2d2140601d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/xtlsoft/XCoroutine/29e45b1aaa65bc758dc2bf7f2be80a2d2140601d.zip",
+                "reference": "29e45b1aaa65bc758dc2bf7f2be80a2d2140601d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Coroutine\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xtlsoft",
+                    "email": "xtlsoft@126.com"
+                }
+            ],
+            "description": "The PHP Coroutine.",
+            "time": "2017-08-17T00:26:06+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "xtlsoft/xcoroutine": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
