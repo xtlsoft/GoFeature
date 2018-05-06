@@ -3,7 +3,7 @@ Enabling Golang Features in PHP.
 
 ## Installation
 ```bash
-composer install xtlsoft/gofeature
+composer require xtlsoft/gofeature
 ```
 
 ## Demos
